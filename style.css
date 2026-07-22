@@ -8,9 +8,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Locked brand palette */
-  --teal: #0D6E6E;
-  --teal-dark: #0A5757;
+  /* Colors matched directly to the logo's own gradient (navy -> cyan-teal),
+     sampled from the source mark, rather than the flatter brand teal */
+  --teal-navy: #0A5BA3;
+  --teal: #0D9DA8;
+  --teal-dark: #0B7E88;
   --offwhite: #F8F6F1;
   --amber: #D97706;
   --charcoal: #1C2B2B;
@@ -21,6 +23,7 @@
   --text-muted: #55696A;
   --border: #D8E4E4;
   --white: #FFFFFF;
+  --gradient-brand: linear-gradient(120deg, var(--teal-navy), var(--teal));
 
   /* Type */
   --font-display: 'Newsreader', Georgia, serif;
@@ -103,7 +106,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; }
 .nav-links a:hover { color: var(--teal); }
 .nav-cta {
-  background: var(--teal);
+  background: var(--gradient-brand);
   color: var(--white) !important;
   padding: 10px 18px;
   border-radius: 999px;
@@ -128,7 +131,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary { background: var(--gradient-brand); color: var(--white); }
 .btn-primary:hover { box-shadow: 0 8px 20px -8px rgba(13,110,110,0.55); }
 .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
 .btn-outline:hover { background: var(--light-teal); }
@@ -161,14 +164,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* Signature element: the checkmark motif, quietly repeated as a background mark */
+/* Signature element: a full recreation of the real logo mark, given weight via shadow */
 .hero-mark {
   position: relative;
   aspect-ratio: 1;
   max-width: 340px;
   justify-self: end;
 }
-.hero-mark svg { width: 100%; height: 100%; }
+.hero-mark svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 22px 40px rgba(10, 60, 80, 0.28));
+}
 
 /* ---------- Section scaffolding ---------- */
 section { padding: 84px 0; }
@@ -264,8 +271,89 @@ section { padding: 84px 0; }
   font-size: clamp(1.6rem, 2.4vw, 2rem);
   margin: 10px 0 12px;
 }
-.samples p.lede { color: var(--text-muted); margin: 0 0 30px; }
-.sample-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.samples p.lede { color: var(--text-muted); margin: 0 auto 44px; }
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  gap: 28px;
+  justify-content: center;
+}
+.sample-card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 20px 44px -24px rgba(13, 46, 46, 0.35);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.sample-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 54px -22px rgba(13, 46, 46, 0.4);
+}
+.sample-card-top {
+  background: var(--gradient-brand);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sample-card-mark { height: 22px; width: 22px; }
+.sample-card-tier {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.92);
+  font-weight: 500;
+}
+.sample-card-body { padding: 22px 22px 6px; flex: 1; }
+.sample-card-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  margin: 0 0 16px;
+  color: var(--charcoal);
+}
+.skeleton-line {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--light-teal);
+  margin-bottom: 9px;
+}
+.sample-card-flag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  background: #FBEEDD;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.sample-card-preview-link {
+  display: block;
+  margin: 20px 22px 4px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px -14px rgba(13, 46, 46, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sample-card-preview-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -14px rgba(13, 46, 46, 0.45);
+}
+.sample-card-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sample-card-btn {
+  margin: 14px 22px 22px;
+  justify-content: center;
+}
 
 /* ---------- FAQ ---------- */
 .faq-list { max-width: 780px; }
@@ -330,6 +418,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   .hero-mark { max-width: 200px; justify-self: start; margin-top: 20px; }
   .is-isnt-grid { grid-template-columns: 1fr; gap: 8px; }
   .tier-grid { grid-template-columns: 1fr; }
+  .sample-grid { grid-template-columns: minmax(0, 300px); }
   .footer-top { flex-direction: column; }
 }
 
