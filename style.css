@@ -180,7 +180,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 
 /* ---------- Section scaffolding ---------- */
 section { padding: 84px 0; }
-.section-head { max-width: 640px; margin: 0 0 10px; }
+.section-head { max-width: 640px; margin: 0 0 18px; }
 .section-head h2 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -427,7 +427,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
 .wrap-narrow { max-width: 760px; }
 
 .page-hero {
-  padding: 18px 0 4px;
+  padding: 28px 0 22px;
   border-bottom: 1px solid var(--border);
 }
 .page-hero h1 {
@@ -439,7 +439,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   color: var(--charcoal);
 }
 
-.about-narrative { padding: 2px 0 4px; }
+.about-narrative { padding: 6px 0 22px; }
 .about-narrative p.lede-large {
   font-family: var(--font-display);
   font-size: 20px;
@@ -454,7 +454,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   line-height: 1.65;
   margin: 0 0 14px;
 }
-.about-ai { padding: 2px 0 1px; }
+.about-ai { padding: 6px 0 22px; }
 .about-ai strong { color: var(--charcoal); }
 .about-ai p.ai-lede {
   font-size: 14px;
@@ -497,7 +497,7 @@ p.ai-step-label {
 }
 
 .mark-divider {
-  margin: 2px auto 2px;
+  margin: 12px auto 12px;
   text-align: center;
 }
 .mark-divider svg {
@@ -507,7 +507,7 @@ p.ai-step-label {
   filter: drop-shadow(0 12px 22px rgba(10, 60, 80, 0.22));
 }
 
-.about-not { padding: 3px 0 32px; }
+.about-not { padding: 6px 0 32px; }
 .not-list {
   list-style: none;
   margin: 0 0 20px;
