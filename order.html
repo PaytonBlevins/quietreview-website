@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Your Review — QuietReview</title>
+<meta name="description" content="Select a tier, upload your proposal or contract, and get an independent, plain-language review.">
+<link rel="icon" type="image/png" href="assets/quietreview-favicon.png">
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="qr-check" viewBox="0 0 24 24" fill="none">
+    <path d="M4 13.2L9.5 18.5L20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="qr-upload" viewBox="0 0 24 24" fill="none">
+    <path d="M12 16V4M12 4L7 9M12 4L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 16V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/quietreview-mark.png" alt="">
+      <span class="brand-word">QuietReview</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#samples">Samples</a></li>
+        <li><a href="index.html#tiers">Reports</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="btn nav-cta" href="order.html">Get started</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Order</p>
+      <h1>Get your review.</h1>
+    </div>
+  </section>
+
+  <!-- ============ ORDER FORM ============ -->
+  <section class="order-section">
+    <div class="wrap wrap-narrow">
+
+      <form id="order-form">
+
+        <!-- Tier selection -->
+        <h2 class="order-step-title">1. Choose your tier</h2>
+        <div class="order-tiers">
+
+          <label class="order-tier-option" data-tier="snapshot" data-price="39">
+            <input type="radio" name="tier" value="snapshot">
+            <span class="order-tier-radio"></span>
+            <span class="order-tier-info">
+              <span class="order-tier-name">Snapshot Review — $39</span>
+              <span class="order-tier-desc">A fast first look: key pricing, red flags, and a plain-language breakdown of your proposal.</span>
+            </span>
+          </label>
+
+          <label class="order-tier-option" data-tier="deeper" data-price="59">
+            <input type="radio" name="tier" value="deeper">
+            <span class="order-tier-radio"></span>
+            <span class="order-tier-info">
+              <span class="order-tier-name">Deeper Analysis — $59</span>
+              <span class="order-tier-desc">A full contract review, market comparison, and equipment evaluation — everything in the Snapshot Review, plus much more.</span>
+            </span>
+          </label>
+
+          <label class="order-tier-option" data-tier="walkthrough" data-price="149">
+            <input type="radio" name="tier" value="walkthrough">
+            <span class="order-tier-radio"></span>
+            <span class="order-tier-info">
+              <span class="order-tier-name">Confidence Walkthrough — $149</span>
+              <span class="order-tier-desc">Everything in the Deeper Analysis, plus a personal video walkthrough and answers to up to 5 follow-up questions.</span>
+            </span>
+          </label>
+
+        </div>
+
+        <!-- Upload -->
+        <h2 class="order-step-title">2. Upload your document</h2>
+        <label class="order-upload" for="doc-upload">
+          <svg class="order-upload-icon"><use href="#qr-upload"/></svg>
+          <span class="order-upload-label">Upload your contract, proposal, or bid</span>
+          <span class="order-upload-note">PDF, JPG, PNG, or HEIC — any format works</span>
+          <span class="order-upload-filename" id="upload-filename"></span>
+          <input type="file" id="doc-upload" name="document" accept=".pdf,.jpg,.jpeg,.png,.heic">
+        </label>
+
+        <!-- Notes -->
+        <h2 class="order-step-title">3. Anything specific? <span class="order-optional">(optional)</span></h2>
+        <textarea class="order-notes" name="notes" rows="4" placeholder="Anything specific you'd like us to focus on? (optional)"></textarea>
+
+        <!-- Submit -->
+        <div class="order-submit-block">
+          <button type="submit" class="btn btn-primary order-submit-btn" id="order-submit">Select a tier to continue</button>
+          <p class="order-trust">Independent. Neutral. Client-paid. Not legal advice.</p>
+        </div>
+
+        <p class="order-note-inline" id="order-status" role="status"></p>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/quietreview-mark.png" alt="">
+        <span>QuietReview</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="order.html">Get a Review</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="terms.html">Terms &amp; Disclaimer</a></li>
+        <li><a href="mailto:hello@quietreview.com">Contact</a></li>
+      </ul>
+    </div>
+    <p class="footer-disclaimer">QuietReview is an independent, client-paid review service. We are not a law firm, we are not financial advisors, and nothing in our reports or on this site is legal or financial advice. QuietReview has no financial relationship with any solar company, installer, or lender. Our reports are intended to help you understand a proposal in plain language — the decision to sign is always yours.</p>
+  </div>
+</footer>
+
+<script>
+  // Pre-select tier from ?tier= URL param (set by the homepage's "Get my X" links)
+  const params = new URLSearchParams(window.location.search);
+  const preselect = params.get('tier');
+  const options = document.querySelectorAll('.order-tier-option');
+  const submitBtn = document.getElementById('order-submit');
+
+  function updateButton() {
+    const checked = document.querySelector('input[name="tier"]:checked');
+    if (!checked) {
+      submitBtn.textContent = 'Select a tier to continue';
+      return;
+    }
+    const opt = checked.closest('.order-tier-option');
+    const price = opt.getAttribute('data-price');
+    const name = opt.querySelector('.order-tier-name').textContent.split(' — ')[0];
+    submitBtn.textContent = `Get My ${name} — $${price}`;
+  }
+
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      options.forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input').checked = true;
+      updateButton();
+    });
+    if (preselect && opt.getAttribute('data-tier') === preselect) {
+      opt.classList.add('selected');
+      opt.querySelector('input').checked = true;
+    }
+  });
+  updateButton();
+
+  // File upload filename display
+  const fileInput = document.getElementById('doc-upload');
+  const filenameSpan = document.getElementById('upload-filename');
+  fileInput.addEventListener('change', () => {
+    filenameSpan.textContent = fileInput.files.length ? `Selected: ${fileInput.files[0].name}` : '';
+  });
+
+  // Checkout isn't wired up yet — Stripe integration is a separate build step.
+  // This gives a clear, honest status instead of silently failing or erroring.
+  document.getElementById('order-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const checked = document.querySelector('input[name="tier"]:checked');
+    const status = document.getElementById('order-status');
+    if (!checked) {
+      status.textContent = 'Please select a tier above before continuing.';
+      return;
+    }
+    status.textContent = 'Checkout isn\'t connected yet — payment processing is coming soon.';
+  });
+</script>
+
+</body>
+</html>

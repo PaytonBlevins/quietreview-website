@@ -421,6 +421,125 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   * { transition: none !important; scroll-behavior: auto !important; }
 }
 
+/* ---------- Order page ---------- */
+.order-section { padding: 8px 0 80px; }
+.order-step-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--charcoal);
+  margin: 36px 0 16px;
+}
+.order-step-title:first-child { margin-top: 8px; }
+.order-optional {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.order-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.order-tier-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--white);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.order-tier-option:hover { border-color: var(--teal); }
+.order-tier-option.selected {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--light-teal);
+}
+.order-tier-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.order-tier-radio {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  margin-top: 2px;
+  position: relative;
+}
+.order-tier-option.selected .order-tier-radio { border-color: var(--teal); }
+.order-tier-option.selected .order-tier-radio::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+}
+.order-tier-info { display: flex; flex-direction: column; gap: 4px; }
+.order-tier-name { font-weight: 700; font-size: 16px; color: var(--charcoal); }
+.order-tier-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+.order-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 36px 20px;
+  border: 1.5px dashed var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--light-teal);
+  transition: border-color 0.15s ease;
+}
+.order-upload:hover { border-color: var(--teal); }
+.order-upload-icon { width: 26px; height: 26px; color: var(--teal); margin-bottom: 4px; }
+.order-upload-label { font-weight: 600; font-size: 16px; color: var(--charcoal); }
+.order-upload-note { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted); }
+.order-upload-filename { font-size: 13.5px; color: var(--teal); font-weight: 600; margin-top: 4px; }
+.order-upload input[type="file"] {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.order-notes {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text);
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.order-notes:focus { border-color: var(--teal); outline: none; }
+
+.order-submit-block { margin-top: 36px; text-align: center; }
+.order-submit-btn { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
+.order-trust {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 14px 0 0;
+}
+.order-note-inline {
+  text-align: center;
+  font-size: 14px;
+  color: var(--teal);
+  margin: 16px 0 0;
+  min-height: 20px;
+}
+
 /* ---------- About page ---------- */
 .nav-links a.active { color: var(--teal); }
 
