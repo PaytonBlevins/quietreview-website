@@ -23,6 +23,9 @@
     <stop offset="0%" stop-color="#0A5BA3"/>
     <stop offset="100%" stop-color="#0D9DA8"/>
   </linearGradient>
+  <clipPath id="lens-clip">
+    <circle cx="131" cy="115" r="26"/>
+  </clipPath>
 </svg>
 
 <header class="site-header">
@@ -60,10 +63,21 @@
       <div class="hero-mark" aria-hidden="true">
         <svg viewBox="0 0 240 240">
           <circle cx="120" cy="120" r="108" fill="url(#qr-mark-gradient)"/>
-          <!-- checkmark: refined weight and proportion, generous breathing room -->
-          <path d="M78 124 L110 158 L166 88" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- subtle swoosh beneath, echoing the motion-curve under the checkmark in the real mark -->
-          <path d="M74 168 Q120 190 166 168" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+          <!-- document, sized and positioned so the full visual mass (not just the line) balances at true center -->
+          <g transform="translate(73,53)">
+            <path d="M0 0 H69 L87 18 V147 H0 Z" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M69 0 V18 H87" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+            <line x1="11.5" y1="39" x2="69" y2="39" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+            <line x1="11.5" y1="62" x2="74" y2="62" stroke="#D97706" stroke-width="8" stroke-linecap="round"/>
+            <line x1="11.5" y1="85" x2="53" y2="85" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+          </g>
+          <!-- magnified segment of the flagged line, clipped to the lens -->
+          <g clip-path="url(#lens-clip)">
+            <line x1="99" y1="115" x2="163" y2="115" stroke="#D97706" stroke-width="13" stroke-linecap="round"/>
+          </g>
+          <!-- lens rim, drawn after the magnified line so the edge reads clean -->
+          <circle cx="131" cy="115" r="26" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+          <line x1="149.4" y1="133.4" x2="165.4" y2="149.4" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
