@@ -302,7 +302,7 @@ section { padding: 84px 0; }
   align-items: center;
   justify-content: space-between;
 }
-.sample-card-mark { height: 22px; width: 22px; }
+.sample-card-mark { height: 22px; width: auto; }
 .sample-card-tier {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -393,7 +393,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .footer-brand { display: flex; align-items: center; gap: 10px; }
-.footer-brand-mark { height: 26px; width: 26px; }
+.footer-brand-mark { height: 26px; width: auto; }
 .footer-brand span { font-weight: 700; color: var(--white); font-size: 17px; }
 .footer-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
 .footer-links a { color: #C9D6D6; text-decoration: none; }
@@ -549,7 +549,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
 .wrap-narrow { max-width: 760px; }
 
 .page-hero {
-  padding: 28px 0 36px;
+  padding: 28px 0 56px;
   border-bottom: 1px solid var(--border);
 }
 .page-hero h1 {
