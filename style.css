@@ -549,7 +549,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
 .wrap-narrow { max-width: 760px; }
 
 .page-hero {
-  padding: 28px 0 56px;
+  padding: 28px 0 30px;
   border-bottom: 1px solid var(--border);
 }
 .page-hero h1 {
@@ -561,7 +561,7 @@ details[open] .faq-toggle { transform: rotate(45deg); }
   color: var(--charcoal);
 }
 
-.about-narrative { padding: 6px 0 22px; }
+.about-narrative { padding: 36px 0 22px; }
 .about-narrative p.lede-large {
   font-family: var(--font-display);
   font-size: 20px;
