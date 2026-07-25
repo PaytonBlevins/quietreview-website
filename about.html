@@ -17,6 +17,10 @@
   <symbol id="qr-dash" viewBox="0 0 24 24" fill="none">
     <path d="M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
   </symbol>
+  <symbol id="qr-mark-reversed" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="12" fill="#FFFFFF"/>
+    <path d="M6.5 12.7L10 16.2L18 7" stroke="#0D9DA8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </symbol>
   <linearGradient id="qr-mark-gradient" x1="15%" y1="10%" x2="90%" y2="95%">
     <stop offset="0%" stop-color="#0A5BA3"/>
     <stop offset="100%" stop-color="#0D9DA8"/>
@@ -132,7 +136,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/quietreview-mark.png" alt="">
+        <svg class="footer-brand-mark"><use href="#qr-mark-reversed"/></svg>
         <span>QuietReview</span>
       </div>
       <ul class="footer-links">
